@@ -1,5 +1,6 @@
 package com.example.tgs_2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +27,12 @@ class ForgotPasswordActivity : AppCompatActivity() {
                 // Jika email kosong, beri peringatan
                 Toast.makeText(this, "Masukkan email terlebih dahulu", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        // Event klik untuk kembali ke halaman Login
+        binding.txtlog.setOnClickListener {
+            val intentLogin = Intent(this, LoginActivity::class.java)
+            startActivity(intentLogin)
         }
     }
 }
