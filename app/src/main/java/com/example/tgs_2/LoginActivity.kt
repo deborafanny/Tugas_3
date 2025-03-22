@@ -2,6 +2,7 @@ package com.example.tgs_2
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,8 +29,23 @@ class LoginActivity : AppCompatActivity() {
 
         // Event click untuk tombol login
         binding.btnLogin.setOnClickListener {
+            val email = binding.etEmail.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
+
+            // Cek apakah email dan password kosong
+            if (email.isEmpty()) {
+                binding.etEmail.error = "Email tidak boleh kosong!"
+                return@setOnClickListener
+            }
+            if (password.isEmpty()) {
+                binding.etPassword.error = "Password tidak boleh kosong!"
+                return@setOnClickListener
+            }
+
+            // Jika email dan password terisi, lanjutkan ke halaman Beranda
             val intentBerandaActivity = Intent(this, BerandaActivity::class.java)
             startActivity(intentBerandaActivity)
+            Toast.makeText(this, "Login Berhasil!", Toast.LENGTH_SHORT).show()
         }
 
         // Event click untuk "Lupa Password"
