@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BerandaActivity">
+
+    <!-- Toolbar dengan tombol Logout -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#AC17"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Beranda">
+
+        <!-- Tombol Logout -->
+        <ImageView
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_lg2"
+            android:layout_gravity="end"
+            android:padding="12dp"
+            android:contentDescription="Logout"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Gambar Selamat Datang -->
+    <ImageView
+        android:id="@+id/imgWelcome"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/welcome"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Teks Selamat Datang -->
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selamat Datang!"
+        android:textColor="#AC1754"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/imgWelcome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Input EditText -->
+    <EditText
+        android:id="@+id/txtDesc"
+        android:layout_width="380dp"
+        android:layout_height="100dp"
+        android:text="Tulis...."
+        android:textSize="16sp"
+        android:textColor="#555555"
+        android:gravity="start"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/txtWelcome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Tombol Share -->
+    <Button
+        android:id="@+id/btnExplore"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Share"
+        android:textSize="18sp"
+        android:backgroundTint="#EC7FA9"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="30dp"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/txtDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
