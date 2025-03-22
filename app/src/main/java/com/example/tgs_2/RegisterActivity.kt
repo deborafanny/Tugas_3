@@ -29,7 +29,37 @@ class RegisterActivity : AppCompatActivity() {
 
         // Event klik untuk tombol "Daftar"
         binding.btnRegister.setOnClickListener {
-            // Tampilkan pesan daftar berhasil
+            val nama = binding.etName.text.toString().trim()
+            val email = binding.etEmail.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
+            val konfirmasiPassword = binding.etConfirmPassword.text.toString().trim()
+
+            if (nama.isEmpty()) {
+                binding.etName.error = "Nama tidak boleh kosong"
+                return@setOnClickListener
+            }
+
+            if (email.isEmpty()) {
+                binding.etEmail.error = "Email tidak boleh kosong"
+                return@setOnClickListener
+            }
+
+            if (password.isEmpty()) {
+                binding.etPassword.error = "Password tidak boleh kosong"
+                return@setOnClickListener
+            }
+
+            if (konfirmasiPassword.isEmpty()) {
+                binding.etConfirmPassword.error = "Konfirmasi password tidak boleh kosong"
+                return@setOnClickListener
+            }
+
+            if (password != konfirmasiPassword) {
+                binding.etConfirmPassword.error = "Password tidak cocok"
+                return@setOnClickListener
+            }
+
+            // Jika semua input sudah diisi dan password cocok
             Toast.makeText(this, "Daftar Berhasil", Toast.LENGTH_SHORT).show()
 
             // Pindah ke halaman Login
